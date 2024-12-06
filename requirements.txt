@@ -1,0 +1,12 @@
+numpy
+pandas
+plotly.figure_factory
+plotly.graph_objs
+plotly.offline
+matplotlib.pyplot
+scipy
+plotly.express
+seaborn
+sklearn.impute
+KNNImputer
+Categorical
