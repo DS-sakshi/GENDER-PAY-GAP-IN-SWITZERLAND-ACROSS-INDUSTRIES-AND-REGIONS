@@ -1,4 +1,4 @@
-# Gender-pay-gap-in-Switzerland-across-industries-and-regions
+# Gender-pay-gap-in-Switzerland-across-Industries-and-Regions
 
 This project delves into the persistent issue of the gender pay gap in Switzerland, focusing on disparities across various industries and regions over the period 2012 to 2020. By leveraging data visualization and statistical analysis, the project aims to uncover trends, regional patterns, and industry-specific challenges related to gender-based wage inequality.
 
@@ -11,8 +11,6 @@ The gender pay gap refers to the difference in average earnings between men and 
 This project is set up to analyze Switzerland's gender pay gap across various industries and regions, using data from 2012 to 2020. The analysis leverages datasets from reliable sources, with a focus on wages for men and women across different sectors and cantons. For those looking to replicate this analysis for a different country, similar data would need to be sourced from national labor statistics agencies or equivalent organizations. In this example, we use data from Switzerland, incorporating both regional and industry-specific details to provide a comprehensive view of pay disparities over time.
 
 Project Organization
-------------
-
 ├── LICENSE
 ├── README.md          <- The top-level README for developers using this project.
 ├── assets             <- Images used in the README.md file
@@ -75,7 +73,6 @@ Project Organization
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
 └── env.example        <- Environment variables for the application
-------------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 
