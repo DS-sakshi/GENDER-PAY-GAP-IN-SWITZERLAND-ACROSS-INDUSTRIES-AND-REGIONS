@@ -33,5 +33,6 @@ In a first step, the cleaning is done on file-basis:
 In a final step, the data sets of the regions were merged, resulting in one final data set. This was used for the analyses.
 
 **Overall Switzerland:**
+
 The data set on overall Switzerland was cleaned differently, as there are lesser data entry points for the final data set. Some indiviual industries were left in the data set, when there were enough single data entry points given. Missing data was dealt with KNN Imputation. 
 
