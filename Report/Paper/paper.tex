@@ -74,9 +74,9 @@ Rather than investigating the underlying causes of the gender pay gap, this rese
 For this analysis, we require official data from the Federal Statistical Office of Switzerland. The data comes in two distinct sets, one containing data sets on gross regions in Switzerland and the other on overall Switzerland.
 
     \begin{itemize}
-        \item  Gross monthly wage (central value) by economic division, occupational status and gender \textit{(Monatlicher Bruttolohn (Zentralwert) nach Wirtschaftsabteilungen, beruflicher Stellung und Geschlecht)}\cite{1}
+        \item  Gross monthly wage (central value) by economic division, occupational status and gender \textit{(Monatlicher Bruttolohn (Zentralwert) nach Wirtschaftsabteilungen, beruflicher Stellung und Geschlecht)}\cite{1} on 7 gross regions
         \item  Gross monthly wage (central value) by degree of employment, occupational status and gender - private and public sector combined \textit{Monatlicher Bruttolohn (Zentralwert) nach Beschäftigungsgrad, beruflicher Stellung und Geschlecht – Privater und öffentlicher Sektor zusammen} \cite{2}
-        \item Gross monthly wage (central value) by degree of employment, occupational status and gender - private and public sector combined \textit{Monatlicher Bruttolohn (Zentralwert) nach Beschäftigungsgrad, beruflicher Stellung und Geschlecht - Privater und öffentlicher Sektor zusammen}\cite{3}
+
     \end{itemize}
 
 
@@ -101,9 +101,12 @@ To analyze the gender pay gap in Switzerland, we applied data visualization tech
 
 The given data sets had missing values, these were handled in different ways: 
 \begin{itemize}
-        \item Missing data in the data set on gross monthly wages overall Switzerland were XXXXXXX
+        \item Missing data in the data set on gross monthly wages overall Switzerland were filled by KNN imputation.
         \item Missing data in data sets on gross regions were removed, as the merged data set provided enough data entry points. 
 \end{itemize}
+\\
+KNN imputation is designed to handle missing values in numerical data. The KNN Imputer calculates the distance between each data point with missing values and all other data points in the data set. Common distance metrics used include Euclidean distance and Manhattan distance. The KNN Imouter identifies the k nearest neighmors, in our data set: 3, for each data point with missing values based on the calculated distances. The missing value is imputed by calculating the average or weighted average of the values from the k nearest neighbors, giving more weight to closer neighbors. \\
+
 \\
 All visualizations in this study were tested for color accessibility using a color blindness simulator to ensure that they are interpretable by individuals with color vision deficiencies. The simulator allowed us to assess how the color choices in the charts would appear to those with common conditions. Based on the results, adjustments were made to the color palette to enhance contrast and ensure clarity for all viewers, regardless of their color vision abilities.\cite{3}\\
 \\
@@ -159,12 +162,12 @@ Figure \ref{relative_gap_roles}, on the other hand, presents the relative gender
     \label{relative_gap_roles}
 \end{figure}
 
-The relative gender pay gap by job role offers a clear depiction of the percentage disparities across various occupational categories, alongside the variations within each category. Even though the gender pay gap of \textit{craftsmen and skilled workers} is the largest (34.59\%), it has the smallest variation across all categories.\\
+The relative gender pay gap by job role offers a clear depiction of the percentage disparities across various occupational categories, alongside the variations within each category. Even though the gender pay gap of \textit{Craftsmen and Skilled Workers} is the largest (34.59\%), it has the smallest variation across all categories.\\
 
 
-The high relative gender pay gap among \textit{craftsmen and Skilled Workers} can be attributed to several structural and societal factors. First, this group aggregates very diverse specific job roles across various industries. These roles are often male-dominated and associated with traditional gender norms. In addition, skilled worker roles often involve pay structures influenced by seniority and overtime. The lack of control over full-time versus part-time employment in this analysis further compounds this issue, as women in these roles are more likely to work part-time, reducing their average earnings relative to men. Finally, cultural biases and systemic discrimination in traditionally male-oriented trades may also contribute to the significant disparities observed in this category.\\
+The high relative gender pay gap among \textit{Craftsmen and Skilled Workers} can be attributed to several structural and societal factors. First, this group aggregates very diverse specific job roles across various industries. These roles are often male-dominated and associated with traditional gender norms. In addition, skilled worker roles often involve pay structures influenced by seniority and overtime. The lack of control over full-time versus part-time employment in this analysis further compounds this issue, as women in these roles are more likely to work part-time, reducing their average earnings relative to men. Finally, cultural biases and systemic discrimination in traditionally male-oriented trades may also contribute to the significant disparities observed in this category.\\
 
-The relatively smaller gender pay gap among \textit{administrative staff} can likely be attributed to several factors. First, administrative roles often have more standardized pay structures, such as set salary scales or fixed hourly wages, which leave less room for negotiation or discretionary pay that could introduce gender-based disparities. Furthermore, these roles may exhibit less occupational segregation compared to other categories, as they tend to attract a more balanced gender distribution and involve tasks that are not strongly associated with traditional gender norms. Additionally, administrative positions may have fewer hierarchical levels, reducing the opportunities for unequal advancement or promotions that contribute to larger gaps in other sectors, such as executive or academic roles. \\
+The relatively smaller gender pay gap among \textit{Administrative Staff} can likely be attributed to several factors. First, administrative roles often have more standardized pay structures, such as set salary scales or fixed hourly wages, which leave less room for negotiation or discretionary pay that could introduce gender-based disparities. Furthermore, these roles may exhibit less occupational segregation compared to other categories, as they tend to attract a more balanced gender distribution and involve tasks that are not strongly associated with traditional gender norms. Additionally, administrative positions may have fewer hierarchical levels, reducing the opportunities for unequal advancement or promotions that contribute to larger gaps in other sectors, such as executive or academic roles. \\
 
 
 \begin{figure}[h]
@@ -178,7 +181,7 @@ Figure  \ref{fig:gross_trend} visualizes the trend of gross pay across all indus
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1\textwidth]{Figures/Gap_over_Time_Roles.png}
+    \includegraphics[width=0.9\textwidth]{Figures/Gap_over_Time_Roles.png}
     \caption{Trends in Gender Pay Gap by Job Roles over Years}
     \label{fig:roles_trend}
 \end{figure}
@@ -188,20 +191,20 @@ Figure  \ref{fig:gross_trend} visualizes the trend of gross pay across all indus
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/Severity_of_Pay_Gap_by_Role_and_Work_Type.png}
+    \includegraphics[width=0.7\textwidth]{Figures/Severity_of_Pay_Gap_by_Role_and_Work_Type.png}
     \caption{Relative Gender Pay Gap by Job Role and Work Tipe}
     \label{fig:heatmap}
 \end{figure}
 
-The Federal Statistical Office defines part-time work as any employment up to 80\% of a full-time workload, while full-time work is classified as 90-100\% of a standard work schedule \cite{3}. Figure \ref{fig:heatmap} segregates the data into full-time and part-time workers as well as the defined job roles.  It provides key insights into how employment type influences the gender pay gap across professions. \\
+The Federal Statistical Office defines part-time work as any employment up to 80\% of a full-time workload, while full-time work is classified as 90-100\% of a standard work schedule \cite{2}. Figure \ref{fig:heatmap} segregates the data into full-time and part-time workers as well as the defined job roles.  It provides key insights into how employment type influences the gender pay gap across professions. \\
 In \textit{Academic/Scientific Professions}, the relatively small pay gap difference between full-time and part-time positions suggests that wage structures in this category are less influenced by working hours or employment type. Academic roles often have standardized salary scales tied to qualifications and seniority, rather than hourly or performance-based metrics, which may mitigate disparities between full-time and part-time workers. Moreover, part-time positions in academia may still require high qualifications and specialized expertise, ensuring comparable pay rates. \\
 \\
 In contrast, the gender pay gap is starkly pronounced in \textit{Craftsmen and Skilled Workers}, where it reaches 28.1\% for full-time roles and escalates to 41.1\% for part-time positions. This significant difference can be attributed to structural and cultural factors within this industry. Part-time roles in skilled professions may often be lower-skilled or less senior positions, which women are more likely to occupy, resulting in wider pay disparities. Additionally, part-time workers in this field may have limited access to bonuses or specialized training opportunities, further exacerbating the gap. The male-dominated nature of these professions also likely contributes to systemic inequalities in wages, promotions, and the valuation of work performed by women, particularly in less visible or part-time roles.\\
 
 In Figure \ref{fig:distribution_gross}, the distributions of gross wages per job role are further differentiated by gender. A wider box indicates greater variability within a job role category on a gender while the length of the whiskers, which extend from the box to the minimum and maximum values provide information about wage dispersion. Longer whiskers indicate greater variability in pay at the extremes within a group. Longer whiskers may indicate a higher impact of seniority on the wages or higher bargaining power in a job role. \\
 \\
-In category \textit{Executives, senior managers}, the variability between men and women is the largest. The width of the boxes indicates a wider range of salaries within male, compared to female, suggesting that men are more likely to occupy higher-paying senior positions and more variable roles within executive levels. The long whiskers, extending to both higher and lower extremes of the pay scale, further emphasize this variability on male executives.In contrast, the box for women is smaller, indicating less variability in pay among female executives and senior managers. However, the whiskers for women are longer than those for men, which suggests a broader spread of salaries at the extremes within the female group. \\
-Despite the lengther wisker for women, the absolute value of the whisker remains smaller than the one for men, indicating that fewer women occupy the highest-paying positions within this category. This disparity in the upper pay distribution highlights the underrepresentation of women in the highest-paying senior roles, reinforcing the notion of a "glass ceiling" effect. 
+In category \textit{Executives, Senior Managers}, the variability between men and women is the largest. The width of the boxes indicates a wider range of salaries within male, compared to female, suggesting that men are more likely to occupy higher-paying senior positions and more variable roles within executive levels. The long whiskers, extending to both higher and lower extremes of the pay scale, further emphasize this variability on male executives. In contrast, the box for women is smaller, indicating less variability in pay among female executives and senior managers. However, the whiskers for women are longer than those for men, which suggests a broader spread of salaries at the extremes within the female group. \\
+Despite the lengthier whisker for women, the absolute value of the whisker remains smaller than the one for men, indicating that fewer women occupy the highest-paying positions within this category. This disparity in the upper pay distribution highlights the under-representation of women in the highest-paying senior roles, reinforcing the notion of a "glass ceiling" effect. 
 \clearpage
 
 \begin{figure}[t]
@@ -227,7 +230,7 @@ A downward trend in the gender pay gap across Switzerland's gross regions over t
 \\
 The largest decline in the gender pay gap is found in the North-West region and may be linked to several regional factors. This area includes the city of Basel, its agglomerations and the canton of Aargau, which all are home to a high concentration of multinational corporations in the pharmaceutical, finance and technology sectors. These employers may have increasingly adopted progressive policies around gender pay equity. Furthermore, this region may have seen a greater number of women entering high-paying sectors and leadership roles, contributing to the narrowing of the pay gap.\\
 
-Figure\ref{fig:gap_regions} depicts the absolute gender pay gap across Swiss regions and illustrates that the disparities in wages between men and women are relatively consistent nationwide, with no region displaying significantly higher or lower gaps. This suggests that the gender pay gap is a pervasive issue across Switzerland, driven by systemic factors that are not confined to specific geographic areas.\\
+Figure \ref{fig:gap_regions} depicts the absolute gender pay gap across Swiss regions and illustrates that the disparities in wages between men and women are relatively consistent nationwide, with no region displaying significantly higher or lower gaps. This suggests that the gender pay gap is a pervasive issue across Switzerland, driven by systemic factors that are not confined to specific geographic areas.\\
 
 \begin{figure}[h]
     \centering
@@ -266,11 +269,8 @@ It is important to note that this analysis provides an overview of the descripti
 \bibitem{Regions} Bundesamt für Statistik (BFS). (2023). Lohnstruktur nach Grossregionen. \\
 Retrieved on 6. December 2024 from  \url{https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur/grossregionen.html}
 
-\bibitem{GrossPay} Bundesamt für Statistik (BFS). (2023). Monatlicher Bruttolohn (Zentralwert) nach Beschäftigungsgrad, beruflicher Stellung und Geschlecht – Privater und öffentlicher Sektor zusammen. \\
-Retrieved on 6. December 2024 from \url{https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.30385239.html}
-
-\bibitem{PartTime}Bundesamt für Statistik (BFS). (2023). Monatlicher Bruttolohn (Zentralwert) nach Beschäftigungsgrad, beruflicher Stellung und Geschlecht – Privater und öffentlicher Sektor zusammen. Retrieved on 6. December 2024 from
-\url{https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.30385239.html}
+\bibitem{GrossPay} Bundesamt für Statistik (BFS). (2023). Employed persons according to economic activity status, brackets of gross income from employment, work-time percentage and gender \\
+Retrieved on 6. December 2024 from \url{https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.32227563.html}
 
 \bibitem{ColorBlindness} Color Blindness. (2023). Coblis - Color Blindness Simulator. Retrieved on 6. December 2024 from \url{https://www.color-blindness.com/coblis-color-blindness-simulator/}
 
