@@ -18,8 +18,6 @@ Project Organization
     |
     ├── .devcontainer               <- Folder for the devcontainer configuration files and Dockerfile & Docker Compose files
     │   ├── Dockerfile              <- Dockerfile for the devcontainer
-    │   ├── devcontainer.json       <- Devcontainer configuration file
-    │   └── docker-compose.yml      <- Docker Compose file for the devcontainer
     │
     ├── data
     │   ├── interim        <- Intermediate data that has been transformed.
@@ -44,7 +42,6 @@ Project Organization
     │   
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
-    └── env.example        <- Environment variables for the application
 
 --------
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
