@@ -57,4 +57,34 @@ Project Organization
 
 We used Overleaf which is an online LaTeX and rich text collaborating and writing tool.
 
-# Set Up Instructions
+# Usage
+To download the git hub file in your local machine use the below command in your command prompt.
+
+```bash
+git clone https://github.com/DS-sakshi/Gender-Pay-Gap-In-Switzerland-Acorss-Industries-And-Regions
+```
+
+# Reproducing using Docker
+Docker is a powerful tool that simplifies the process of building, shipping, and running applications. It packages software into standardized units called containers. These containers include everything the software needs to run, such as libraries, system tools, code, and runtime. 
+
+Step 1: Install Docker Desktop from the official website https://www.docker.com/
+
+Step 2: Open a Terminal or Command Prompt
+
+Step 3: Docker Hub is a repository where Docker images are stored and shared. The sakshic403/gender-pay-gap-notebook image is hosted on Docker Hub. Pull the image using the below command. This command fetches the specified Docker image from the Docker Hub repository and stores it locally on your system.
+
+```bash
+docker pull sakshic403/gender-pay-gap-notebook:version2
+```
+
+Step 4: Run the Docker container using the below command. This command does the following: 
+•	-it: Runs the container in interactive mode, allowing you to interact with it.
+•	-p 8888:8888: Maps port 8888 of the container to port 8888 of your host machine. This allows you to access the Jupyter Notebook interface in your web browser.
+
+```bash
+docker run -it -p 8888:8888 sakshic403/gender-pay-gap-notebook:version2
+```
+
+Step 5: The docker will provide you with links (mostly two). Copy and paste both the links in your web browser to access the Jupyter Notebook interface.
+
+By following these steps you should be able to successfully pull and run the sakshic403/gender-pay-gap-notebook:version2 image and access the Jupyter Notebook environment.
