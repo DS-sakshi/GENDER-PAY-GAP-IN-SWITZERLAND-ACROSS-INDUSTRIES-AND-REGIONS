@@ -55,7 +55,20 @@ Project Organization
 We used Overleaf which is an online LaTeX and rich text collaborating and writing tool.
 
 # Usage
-To download the git hub file in your local machine use the below command in your command prompt.
+To download the git hub file in your local machine you need to install the git and then use the below command in your command prompt.
+
+Step 1: Visit the official Git website and download the installer: https://git-scm.com/downloads
+
+Step 2: Double-click the downloaded installer file. Follow the on-screen instructions to complete the installation process.
+
+Step 3: Open command prompt and check whether git is downloaded or not using the below command
+
+```bash
+git --version
+```
+This will display the installed Git version. If you encounter any issues during the installation or usage, refer to the official Git documentation or seek help from online communities.
+
+Step 4: Download the git hub repository in your local machine by running the following command.
 
 ```bash
 git clone https://github.com/DS-sakshi/Gender-Pay-Gap-In-Switzerland-Acorss-Industries-And-Regions
